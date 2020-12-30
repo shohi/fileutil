@@ -1,2 +1,2 @@
 # fileutil
-file and dir utilities in golang (WIP)
+file and dir utilities in golang
