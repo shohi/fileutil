@@ -1,6 +1,9 @@
 package fileutil
 
-import "os"
+import (
+	"os"
+	"strings"
+)
 
 // IsDir checks whether the given path is a directory.
 func IsDir(path string) bool {
@@ -41,4 +44,12 @@ func Exists(path string) bool {
 	}
 
 	return true
+}
+
+// IsHiddenFile checks whether the file is hidden, that's,
+// starts with ".".
+func IsHiddenFile(f os.FileInfo) bool {
+	name := f.Name()
+
+	return strings.HasPrefix(name, ".")
 }
